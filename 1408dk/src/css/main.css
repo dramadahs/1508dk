@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+/* FONT FACE */
+@font-face {
+  font-family: Anton;
+  src: url(../assets/fonts/Anton-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: WorkSans;
+  src: url(../assets/fonts/WorkSans-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: WorkSans-Bold;
+  src: url(../assets/fonts/WorkSans-Bold.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: WorkSans-Italic;
+  src: url(../assets/fonts/WorkSans-Italic.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: WorkSans-BoldItalic;
+  src: url(../assets/fonts/WorkSans-BoldItalic.woff2);
+  font-weight: 400;
+}
+
+:root {
+  --primary-color: #f2f1db;
+  --secondary-color: #207d62;
+  --tertiary-color: #fcfcfc;
+  --brand-color: #ee4040;
+  --white-color: #fcfcfc;
+  --black-color: #272727;
+
+  --h1-font-size: 106px;
+  --h2-font-size: 42px;
+  --h3-font-size: 24px;
+  --h4-font-size: 24px;
+  --p-font-size: 16px;
+  --cta-font-size: 18px;
+  --menu-font-size: 14px;
+  --footer-menu-font-size: 16px;
+
+  --cta-padding: ;
+}
+
+h1,
+h2,
+.cta-grey,
+.cta-black,
+.menu-button {
+  font-family: "Anton";
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-family: "WorkSans-Italic";
+  text-transform: uppercase;
+  font-size: var(--h3-font-size);
+  letter-spacing: 2px;
+}
+
+h4 {
+  font-family: "WorkSans-BoldItalic";
+  text-transform: uppercase;
+  font-size: var(--h4-font-size);
+  letter-spacing: 4px;
+}
+
+p {
+  font-family: "WorkSans";
+  font-size: var(--p-font-size);
+  letter-spacing: 2px;
+}
+
+.p-bold {
+  font-family: "WorkSans-Bold";
+}
+
+.cta-grey {
+  font-size: var(--cta-font-size);
+  letter-spacing: 8px;
+  padding: 5px 20px;
+  color: var(--black-color);
+  background-color: var(--tertiary-color);
+}
+
+.cta-black {
+  font-size: var(--cta-font-size);
+  letter-spacing: 8px;
+  padding: 5px 20px;
+  color: var(--white-color);
+  background-color: var(--black-color);
+}
+
+.menu-button {
+  font-size: var(--menu-font-size);
+  letter-spacing: 5px;
+}
