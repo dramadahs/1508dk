@@ -1,49 +1,69 @@
 ---
-
+const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
 ---
 
-<section class="teaser-content">
-  <img src="/nature.png" alt="Et træ omgivet af vild natur" />
-  <article>
-    <h2>Rapport: Dankorts egen bære&shydygtighed</h2>
-    <p>
-      Hvor ofte handlede du økologisk? Og hvor mange benyttede du egentlig dit Dankort i 2025? Få
-      indsigter om dit personlige forbrugs&shymønster og se, om du har optjent nok klima&shypoint
-      til et Green Pass - vores belønning til dig, der har handlet særligt klima&shybevidst i året
-      som gik.
-    </p>
-    <a class="cta-black" href="/">Læs artikel</a>
-  </article>
+<section class="hero-container">
+  <section class="hero-content">
+    <article>
+      <h2>GUIDE TIL BÆREDYGTIGT FORBRUG: forstå produkt&shymærkningerne</h2>
+      <p>
+        Dankort giver dig med Forbrugs&shytjekket mulighed for at få et overblik over lorem ipsum
+        dolor sit amet. Ut voluptatibus dolorem sit quia maxime eos voluptatem accusantium qui quod
+        necessitatibus sit earum maiores ut amet consequuntur aut quod aspernatur.
+      </p>
+      <a class="cta-grey" href="/">Læs artikel</a>
+    </article>
+    <img src="/oekotex.png" alt="OEKO-TEX-mærkat" />
+  </section>
 </section>
 
 <style>
+  h1 {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding-top: var(--top-padding);
+    color: var(--black-color);
+  }
+
   h2,
   p {
-    color: var(--black-color);
+    color: var(--white-color);
+  }
+
+  h2 {
     padding-bottom: calc(var(--top-padding) * 2);
   }
 
-  .teaser-content {
+  .hero-container {
     background-color: var(--primary-color);
+    background-image: url(/dandelions.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: var(--main-padding) var(--main-padding);
+  }
+
+  .hero-content {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: var(--section-gap);
     padding: var(--main-padding);
     align-items: center;
     justify-content: center;
   }
 
-  img {
-    display: block;
-    max-width: 480px;
-    height: 100%;
-    margin-right: var(--main-padding);
-  }
   article {
     display: flex;
     flex-direction: column;
     max-width: 480px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: var(--main-padding);
   }
 
   a {
@@ -52,32 +72,30 @@
     width: auto;
   }
 
-  @media (max-width: 1213px) {
-    .teaser-content {
+  p {
+    margin-bottom: calc(var(--top-padding) * 2);
+  }
+
+  @media (max-width: 1330px) {
+    .hero-container {
+      padding: var(--main-padding) 0;
+    }
+
+    .hero-content {
+      border-radius: 0;
       gap: calc(var(--article-gap) / 2);
       padding: var(--main-padding) calc(var(--main-padding) / 2);
     }
-  }
 
-  @media (max-width: 995px) {
-    .teaser-content {
-      flex-direction: column;
-    }
     img {
-      order: 1;
-      padding-top: calc(var(--top-padding) * 2);
-      margin-right: 0;
+      margin-left: 0;
     }
   }
 
   @media (max-width: 450px) {
-    .hero-content {
-      position: relative;
-      margin-right: 0;
-    }
-
-    img {
-      max-width: 100%;
+    .article {
+      display: flex;
+      flex-direction: column;
     }
 
     a {
