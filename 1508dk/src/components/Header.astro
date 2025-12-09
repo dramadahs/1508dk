@@ -14,7 +14,7 @@
   <nav>
     <ul>
       <li><a class="menu-button" href="index">Mærkningsguide</a></li>
-      <li><a class="menu-button" href="index">Om Forbrugstjekket</a></li>
+      <li><a class="menu-button" href="index">Om Forbrugs&shytjekket</a></li>
       <li><a class="menu-button login-button" href="index">Log ind</a></li>
     </ul>
   </nav>
@@ -51,7 +51,10 @@
   .hamburger-menu {
     display: none;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1330px) {
+    header {
+      padding: var(--top-padding) calc(var(--main-padding) / 2);
+    }
     ul {
       display: none;
     }
