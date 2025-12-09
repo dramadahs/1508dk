@@ -1,0 +1,93 @@
+---
+const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
+---
+
+<h1>Forbrugs&shytjekket</h1>
+<section class="hero-container">
+  <section class="hero-content">
+    <article>
+      <h2>Få indblik i dit forbrug og miljø&shypåvirkning med Forbrugs&shytjekket</h2>
+      <p>
+        Dankort giver dig med Forbrugs&shytjekket mulighed for at få et overblik over lorem ipsum
+        dolor sit amet. Ut voluptatibus dolorem sit quia maxime eos voluptatem accusantium qui quod
+        necessitatibus sit earum maiores ut amet consequuntur aut quod aspernatur.
+      </p>
+    </article>
+    <img src="/index-hero.png" alt="En hånd holder et Dankort" />
+  </section>
+</section>
+
+<style>
+  h1 {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding-top: var(--top-padding);
+    color: var(--black-color);
+  }
+
+  h2,
+  p {
+    color: var(--white-color);
+  }
+
+  h2 {
+    padding-bottom: calc(var(--top-padding) * 2);
+  }
+
+  .hero-container {
+    background-color: var(--primary-color);
+    background-image: url(/wave.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: var(--main-padding) var(--main-padding);
+  }
+
+  .hero-content {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--section-gap);
+    padding: var(--main-padding);
+    align-items: center;
+    justify-content: center;
+  }
+
+  article {
+    max-width: 480px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 1330px) {
+    .hero-container {
+      padding: var(--main-padding) 0;
+    }
+
+    .hero-content {
+      border-radius: 0;
+      gap: calc(var(--article-gap) / 2);
+      padding: var(--main-padding) calc(var(--main-padding) / 2);
+    }
+
+    article {
+      max-width: 480px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .hero-content {
+      position: relative;
+    }
+
+    img {
+      order: -1;
+      transform: translateX(-25%);
+    }
+  }
+</style>
