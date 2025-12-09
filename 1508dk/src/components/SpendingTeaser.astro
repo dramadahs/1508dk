@@ -1,0 +1,129 @@
+---
+
+---
+
+<section class="teaser-content">
+  <h2>Tjek dit forbrug</h2>
+  <h3>&#8211; Bliv klogere på dine vaner og klimaaftryk</h3>
+  <section class="images">
+    <img src="/money.png" alt="En stak med kontanter" />
+    <img src="/dessert.png" alt="Et glas med dessert i" />
+    <img src="/coffee.png" alt="En kop kaffe med skum på toppen" />
+    <img src="/basket.png" alt="En handlekurv" />
+    <img src="/ticket.png" alt="En biografbillet" />
+    <img src="/shirt.png" alt="En skjorte med flammemønster" />
+  </section>
+  <a class="cta-black" href="/">Log ind</a>
+</section>
+
+<style>
+  .images {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    padding: var(--main-padding);
+  }
+
+  img {
+    position: absolute;
+    width: 200px;
+  }
+
+  .images img:nth-child(1) {
+    top: -5%;
+    left: 20%;
+    z-index: 2;
+  }
+  .images img:nth-child(2) {
+    top: 30%;
+    left: 5%;
+    z-index: 2;
+  }
+  .images img:nth-child(3) {
+    bottom: -10%;
+    left: 25%;
+    z-index: 2;
+  }
+  .images img:nth-child(4) {
+    align-self: center;
+    justify-self: center;
+    width: 400px;
+    height: auto;
+    z-index: 1;
+  }
+  .images img:nth-child(5) {
+    top: -5%;
+    right: 18%;
+    width: 300px;
+    z-index: 2;
+  }
+  .images img:nth-child(6) {
+    bottom: -10%;
+    right: 20%;
+    width: 300px;
+    z-index: 2;
+  }
+
+  h2,
+  h3 {
+    color: var(--black-color);
+  }
+
+  h2 {
+    padding-bottom: calc(var(--top-padding) * 2);
+  }
+
+  .teaser-content {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: var(--main-padding);
+    align-items: center;
+    justify-content: center;
+  }
+
+  h3 {
+    align-self: flex-end;
+  }
+
+  a {
+    align-self: center;
+    display: inline-block;
+    width: auto;
+  }
+
+  @media (max-width: 1213px) {
+    .teaser-content {
+      gap: calc(var(--article-gap) / 2);
+      padding: var(--main-padding) calc(var(--main-padding) / 2);
+    }
+  }
+
+  @media (max-width: 995px) {
+    .teaser-content {
+      flex-direction: column;
+    }
+    img {
+      padding-top: calc(var(--top-padding) * 2);
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .hero-content {
+      position: relative;
+      margin-right: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      align-self: center;
+    }
+  }
+</style>
