@@ -56,16 +56,25 @@ body {
   --menu-font-size: 14px;
   --footer-menu-font-size: 16px;
 
-  --cta-padding: ;
+  --cta-padding-invisible: 5px 21px;
+  --cta-padding: 5px 20px;
+
+  --main-padding: 50px;
+  --top-padding: 25px;
 }
 
 h1,
 h2,
 .cta-grey,
 .cta-black,
+.cta-green,
 .menu-button {
   font-family: "Anton";
   text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
@@ -104,16 +113,16 @@ p {
 
 .cta-grey {
   font-size: var(--cta-font-size);
-  letter-spacing: 8px;
-  padding: 5px 20px;
+  letter-spacing: 4px;
+  padding: var(--cta-padding);
   color: var(--black-color);
   background-color: var(--tertiary-color);
 }
 
 .cta-black {
   font-size: var(--cta-font-size);
-  letter-spacing: 8px;
-  padding: 5px 20px;
+  letter-spacing: 4px;
+  padding: var(--cta-padding);
   color: var(--white-color);
   background-color: var(--black-color);
 }
@@ -121,4 +130,19 @@ p {
 .menu-button {
   font-size: var(--menu-font-size);
   letter-spacing: 5px;
+  color: var(--black-color);
+  padding: var(--cta-padding-invisible);
+}
+
+.login-button {
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  border-radius: 30px;
+  padding: var(--cta-padding-invisible);
+}
+
+.menu-button:hover {
+  border: 1px solid var(--black-color);
+  padding: var(--cta-padding);
+  border-radius: 30px;
 }
