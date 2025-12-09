@@ -58,6 +58,7 @@ body {
 
   --cta-padding-invisible: 5px 21px;
   --cta-padding: 5px 20px;
+  --cta-border-radius: 30px;
 
   --main-padding: 50px;
   --top-padding: 25px;
@@ -119,6 +120,7 @@ p {
   padding: var(--cta-padding);
   color: var(--black-color);
   background-color: var(--tertiary-color);
+  border-radius: var(--cta-border-radius);
 }
 
 .cta-black {
@@ -127,6 +129,7 @@ p {
   padding: var(--cta-padding);
   color: var(--white-color);
   background-color: var(--black-color);
+  border-radius: var(--cta-border-radius);
 }
 
 .menu-button {
@@ -139,7 +142,7 @@ p {
 .login-button {
   color: var(--white-color);
   background-color: var(--secondary-color);
-  border-radius: 30px;
+  border-radius: var(--cta-border-radius);
   padding: var(--cta-padding-invisible);
 }
 
