@@ -82,32 +82,27 @@ a {
 
 h1 {
   font-size: var(--h1-font-size);
-  letter-spacing: 2px;
 }
 
 h2 {
   font-size: var(--h2-font-size);
-  letter-spacing: 4px;
 }
 
 h3 {
   font-family: "WorkSans-Italic";
   text-transform: uppercase;
   font-size: var(--h3-font-size);
-  letter-spacing: 2px;
 }
 
 h4 {
   font-family: "WorkSans-BoldItalic";
   text-transform: uppercase;
   font-size: var(--h4-font-size);
-  letter-spacing: 4px;
 }
 
 p {
   font-family: "WorkSans";
   font-size: var(--p-font-size);
-  letter-spacing: 2px;
 }
 
 .p-bold {
