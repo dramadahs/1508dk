@@ -4,7 +4,7 @@
 
 <section class="teaser-content">
   <h2>Tjek dit forbrug</h2>
-  <h3>&#8211; med Forbrugstjekket</h3>
+  <div><h3>&#8211; med Forbrugstjekket</h3></div>
   <section class="images">
     <img src="/money.png" alt="En stak med kontanter" />
     <img src="/dessert.png" alt="Et glas med dessert i" />
@@ -71,8 +71,13 @@
     color: var(--black-color);
   }
 
-  h2 {
+  /*   h2 {
     padding-bottom: calc(var(--top-padding) * 2);
+  } */
+  div {
+    margin: 0 auto;
+    max-width: 400px;
+    display: flex;
   }
 
   .teaser-content {
@@ -86,7 +91,6 @@
   }
 
   h3 {
-    align-self: flex-end;
   }
 
   a {
