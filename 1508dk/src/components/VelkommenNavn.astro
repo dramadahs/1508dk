@@ -29,10 +29,34 @@
       <img src="" alt="" />
     </div>
   </section>
-  <p>
-    Infografikken ovenover er med til at give et overblik over forbrug,
-    visualiseret på forskellige poster og butikker. Du kan sammenligne dit
-    forbrug med samme måned sidste år, og få et indblik i dine største
-    forbrugsposter.
-  </p>
+  <div class="info-text">
+    <p>
+      Infografikken ovenover er med til at give et overblik over forbrug,
+      visualiseret på forskellige poster og butikker. Du kan sammenligne dit
+      forbrug med samme måned sidste år, og få et indblik i dine største
+      forbrugsposter.
+    </p>
+  </div>
 </section>
+
+<style>
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+  }
+
+  .graph-section {
+    background-color: var(--tertiary-color);
+    margin: 5em;
+    padding: 1em 5em;
+    display: flex;
+    justify-content: space-between;
+    flex: 110;
+  }
+
+  .info-text {
+    max-width: 800px;
+    margin: 5em;
+  }
+</style>
