@@ -1,5 +1,5 @@
 ---
-const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
+const { pageTitle, articleTitle, articleP, articleImg, background } = Astro.props;
 ---
 
 <h1>Forbrugs&shytjekket</h1>
@@ -8,9 +8,8 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
     <article>
       <h2>Få indblik i dit forbrug og miljø&shypåvirkning med Forbrugs&shytjekket</h2>
       <p>
-        Dankort giver dig med Forbrugs&shytjekket mulighed for at få et overblik over lorem ipsum
-        dolor sit amet. Ut voluptatibus dolorem sit quia maxime eos voluptatem accusantium qui quod
-        necessitatibus sit earum maiores ut amet consequuntur aut quod aspernatur.
+        Dankort giver dig med Forbrugs&shytjekket mulighed for at få et overblik over lorem ipsum dolor sit amet. Ut voluptatibus dolorem sit quia maxime eos voluptatem accusantium qui quod necessitatibus sit earum maiores ut amet consequuntur aut
+        quod aspernatur.
       </p>
     </article>
     <img src="/index-hero.png" alt="En hånd holder et Dankort" />
@@ -41,6 +40,7 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
     background-position: center;
     background-repeat: no-repeat;
     padding: var(--main-padding) var(--main-padding);
+    height: 750px;
   }
 
   .hero-content {
@@ -51,6 +51,8 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
     padding: var(--main-padding);
     align-items: center;
     justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
   }
 
   article {
