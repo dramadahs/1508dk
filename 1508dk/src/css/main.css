@@ -48,7 +48,7 @@ body {
   --black-color: #272727;
 
   --h1-font-size: 70px;
-  --h2-font-size: 28px;
+  --h2-font-size: 40px;
   --h3-font-size: 24px;
   --h4-font-size: 24px;
   --p-font-size: 16px;
@@ -103,6 +103,7 @@ h4 {
 p {
   font-family: "WorkSans";
   font-size: var(--p-font-size);
+  line-height: 25px;
 }
 
 .p-bold {
@@ -111,7 +112,7 @@ p {
 
 .cta-grey {
   font-size: var(--cta-font-size);
-  letter-spacing: 4px;
+
   padding: var(--cta-padding);
   color: var(--black-color);
   background-color: var(--tertiary-color);
@@ -120,7 +121,7 @@ p {
 
 .cta-black {
   font-size: var(--cta-font-size);
-  letter-spacing: 4px;
+
   padding: var(--cta-padding);
   color: var(--white-color);
   background-color: var(--black-color);
@@ -129,7 +130,6 @@ p {
 
 .menu-button {
   font-size: var(--menu-font-size);
-  letter-spacing: 5px;
   color: var(--black-color);
   padding: var(--cta-padding-invisible);
 }
