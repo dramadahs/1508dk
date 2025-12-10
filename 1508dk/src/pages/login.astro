@@ -6,3 +6,18 @@ import Login from "../components/Login.astro";
 <Layout>
   <Login />
 </Layout>
+
+<script>
+  document.querySelector(".loginbtn").addEventListener("click", validLogin);
+
+  function validLogin() {
+    const userinputUser = document.getElementById("input-user");
+    const userinputPassword = document.getElementById("input-password");
+
+    if (userinputUser && userinputPassword) {
+      if (userinputUser.value == "carla" && userinputPassword.value == 1234) {
+        window.location.href = "forbrugstjek.astro";
+      }
+    }
+  }
+</script>
