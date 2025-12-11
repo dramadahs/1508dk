@@ -1,23 +1,88 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Login from "../components/Login.astro";
 ---
 
 <Layout>
-  <Login />
+  <h1 id="loginHeader">Log ind</h1>
+  <form>
+    <label>
+      Brugernavn
+      <input type="text" name="username" placeholder="carla / louise / martin" id="input-user" />
+    </label>
+    <label>
+      Adgangskode
+      <input type="password" name="password" placeholder="1234" id="input-password" />
+    </label>
+    <button id="loginbtn">Log ind</button>
+    <p>Har du ikke en bruger? <a href="">Opret dig her</a></p>
+  </form>
 </Layout>
 
-<script>
-  document.querySelector(".loginbtn").addEventListener("click", validLogin);
-
-  function validLogin() {
-    const userinputUser = document.getElementById("input-user");
-    const userinputPassword = document.getElementById("input-password");
-
-    if (userinputUser && userinputPassword) {
-      if (userinputUser.value == "carla" && userinputPassword.value == 1234) {
-        window.location.href = "forbrugstjek.astro";
-      }
+<style>
+  :root {
+    background-color: var(--primary-color);
+    background-image: url(/wave.png);
+    /* background-size: cover; */
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+  }
+  form {
+    margin: 0 auto;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 50px;
+    gap: 30px;
+    margin-bottom: 300px;
+  }
+  button {
+    align-self: center;
+    padding: 10px;
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    border: 1px solid black;
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    font-family: WorkSans;
+    gap: 10px;
+  }
+  input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 100px;
+  }
+  p {
+    font-size: 10px;
+    a {
+      text-decoration: underline;
     }
   }
+</style>
+
+<!-- virker ikke endnu -->
+<script>
+  let userinputUser;
+  let userinputPassword;
+
+  document.getElementById("loginbtn").onclick = function () {
+    userinputUser = document.getElementById("input-user").value;
+    userinputPassword = document.getElementById("input-password").value;
+
+    document.getElementById("loginHeader").textContent = `Hello ${userinputUser}`;
+    // if (userinputUser == "carla" && userinputPassword == "1234") {
+    //   //   window.location.href = "forbrugstjek.astro";
+    // }
+  };
 </script>
