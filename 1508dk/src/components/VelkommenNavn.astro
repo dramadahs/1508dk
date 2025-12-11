@@ -14,18 +14,18 @@
 
   <section class="graph-section">
     <div class="title-and-graph">
-      <p>forbrugspost</p>
-      <p>FØDEVARER</p>
+      <p class="p-bold">FORBRUGSPOST</p>
+      <p class="p-bold">FØDEVARER</p>
       <img src="" alt="" />
     </div>
     <div class="title-and-graph">
-      <p>forbrugspost</p>
-      <p>TØJ, SKO & ACCESSORIES</p>
+      <p class="p-bold">FORBRUGSPOST</p>
+      <p class="p-bold">TØJ, SKO & ACCESSORIES</p>
       <img src="" alt="" />
     </div>
     <div class="title-and-graph">
-      <p>forbrugspost</p>
-      <p>MEST BESØGTE BUTIKKER</p>
+      <p class="p-bold">FORBRUGSPOST</p>
+      <p class="p-bold">MEST BESØGTE BUTIKKER</p>
       <img src="" alt="" />
     </div>
   </section>
@@ -42,8 +42,10 @@
 <style>
   .top-section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 2em;
+    padding: 1em 5em;
   }
 
   .graph-section {
@@ -52,11 +54,15 @@
     padding: 1em 5em;
     display: flex;
     justify-content: space-between;
-    flex: 110;
+    flex-wrap: wrap;
   }
 
   .info-text {
     max-width: 800px;
     margin: 5em;
+  }
+
+  .cta-black {
+    align-self: flex-end;
   }
 </style>
