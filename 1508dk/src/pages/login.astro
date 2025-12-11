@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
       Adgangskode
       <input type="password" name="password" placeholder="1234" id="input-password" />
     </label>
-    <button id="loginbtn">Log ind</button>
+    <button id="loginbtn"><a href="/forbruger/1/">Log ind</a></button>
     <p>Har du ikke en bruger? <a href="">Opret dig her</a></p>
   </form>
 </Layout>
@@ -22,7 +22,6 @@ import Layout from "../layouts/Layout.astro";
   :root {
     background-color: var(--primary-color);
     background-image: url(/wave.png);
-    /* background-size: cover; */
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: 100vw;
@@ -47,6 +46,9 @@ import Layout from "../layouts/Layout.astro";
     color: white;
     width: 100%;
     border: 1px solid black;
+    a {
+      color: var(--white-color);
+    }
   }
   label {
     display: flex;
@@ -73,16 +75,16 @@ import Layout from "../layouts/Layout.astro";
 
 <!-- virker ikke endnu -->
 <script>
-  let userinputUser;
-  let userinputPassword;
+  // let userinputUser;
+  // let userinputPassword;
 
-  document.getElementById("loginbtn").onclick = function () {
-    userinputUser = document.getElementById("input-user").value;
-    userinputPassword = document.getElementById("input-password").value;
+  // document.getElementById("loginbtn").onclick = function () {
+  //   userinputUser = document.getElementById("input-user").value;
+  //   userinputPassword = document.getElementById("input-password").value;
 
-    document.getElementById("loginHeader").textContent = `Hello ${userinputUser}`;
-    // if (userinputUser == "carla" && userinputPassword == "1234") {
-    //   //   window.location.href = "forbrugstjek.astro";
-    // }
-  };
+  //   document.getElementById("loginHeader").textContent = `Hello ${userinputUser}`;
+  //   // if (userinputUser == "carla" && userinputPassword == "1234") {
+  //   //   //   window.location.href = "forbrugstjek.astro";
+  //   // }
+  // };
 </script>
