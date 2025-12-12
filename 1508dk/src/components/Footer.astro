@@ -1,0 +1,132 @@
+<!-- FOOTER DESKTOP -->
+<section class="footer-section-desktop">
+  <article class="footer-article-desktop">
+    <p class="p-bold">Forbrugstjekket</p>
+    <a href="">Om Forbrugstjekket</a>
+    <a href="">Om Green Pass</a>
+    <a href="">Guide: Bæredygtig forbrug</a>
+  </article>
+  <article class="footer-article-desktop">
+    <p class="p-bold">Dankort</p>
+    <a href="">Om Dankort</a>
+    <a href="">Øremærket</a>
+    <a href="">Presse</a>
+    <a href="">Logo og billeder</a>
+  </article>
+  <article class="footer-article-desktop">
+    <p class="p-bold">Support</p>
+    <a href="">Kontakt salg</a>
+    <a href="">Kontakt kundeservice</a>
+    <a href="">Support erhverv</a>
+    <a href="">Support privat</a>
+  </article>
+  <article class="footer-article-desktop">
+    <p class="p-bold">Politikker</p>
+    <a href="">Privatlivspolitikker</a>
+    <a href="">Cookies</a>
+    <a href="">AEE regulativ</a>
+  </article>
+  <div class="footer-logo">
+    <img src="../../public/logo_black.png" alt="sort Dankort logo" width="100%" ; />
+  </div>
+</section>
+
+<!-- FOOTER MOBILE -->
+<section class="footer-section-mobile">
+  <article class="link-section">
+    <details class="footer-article">
+      <summary class="p-bold footer-headline">Forbrugstjekket</summary>
+      <div class="footer-links">
+        <a href="">Om Forbrugstjekket</a>
+        <a href="">Om Green Pass</a>
+        <a href="">Guide: Bæredygtig forbrug</a>
+      </div>
+    </details>
+    <details class="footer-article">
+      <summary class="p-bold footer-headline">Dankort</summary>
+      <div class="footer-links">
+        <a href="">Om Dankort</a>
+        <a href="">Øremærket</a>
+        <a href="">Presse</a>
+        <a href="">Logo og billeder</a>
+      </div>
+    </details>
+    <details class="footer-article">
+      <summary class="p-bold footer-headline">Support</summary>
+      <div class="footer-links">
+        <a href="">Kontakt salg</a>
+        <a href="">Kontakt kundeservice</a>
+        <a href="">Support erhverv</a>
+        <a href="">Support privat</a>
+      </div>
+    </details>
+    <details class="footer-article">
+      <summary class="p-bold footer-headline">Politikker</summary>
+      <div class="footer-links">
+        <a href="">Privatlivspolitikker</a>
+        <a href="">Cookies</a>
+        <a href="">AEE regulativ</a>
+      </div>
+    </details>
+  </article>
+  <div class="footer-logo">
+    <img src="../../public/logo_black.png" alt="sort Dankort logo" width="100%" ; />
+  </div>
+</section>
+
+<style>
+  .footer-section-desktop {
+    display: flex;
+    flex-direction: row;
+    padding: 80px;
+    background-color: var(--white-color);
+    justify-content: space-between;
+  }
+  .footer-article-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-section-mobile {
+    display: flex;
+    flex-direction: row;
+    padding: 80px;
+    background-color: var(--white-color);
+    justify-content: center;
+  }
+  .link-section {
+    margin-top: 100px;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .footer-article {
+    margin-bottom: 20px;
+    width: 250px;
+  }
+  .footer-headline {
+    border-bottom: 2px solid black;
+  }
+  img {
+    max-width: 80px;
+  }
+  a {
+    font-family: WorkSans;
+    color: var(--black-color);
+  }
+  @media (width<1000px) {
+    .footer-section-desktop {
+      visibility: hidden;
+      display: none;
+    }
+  }
+  @media (width>=1000px) {
+    .footer-section-mobile {
+      visibility: hidden;
+      display: none;
+    }
+  }
+</style>
