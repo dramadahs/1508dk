@@ -23,6 +23,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+
 ---
 
 <Layout>
@@ -99,15 +100,17 @@ const { post } = Astro.props;
     <h2>Dit 2025 forbrugs-recap</h2>
     <section class="recap-cards-section">
       <div class="slider-div-videos">
-        <video class="card-1" src={post.card1} autoplay muted loop alt="" />
-        <video class="card-2" src={post.card2} autoplay muted loop alt="" />
-        <video class="card-3" src={post.card3} autoplay muted loop alt="" />
-        <video class="card-4" src={post.card4} autoplay muted loop alt="" />
-        <video class="card-5" src={post.card5} autoplay muted loop alt="" />
-        <video class="card-6" src={post.card6} autoplay muted loop alt="" />
-        <video class="card-7" src={post.card7} autoplay muted loop alt="" />
-        <video class="card-8" src={post.card8} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card1} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card2} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card3} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card4} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card5} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card6} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card7} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card8} autoplay muted loop alt="" />
       </div>
+ <a class="prev" >&#10094;</a>
+  <a class="next" >&#10095;</a>
     </section>
   </section>
 
@@ -248,17 +251,65 @@ const { post } = Astro.props;
     margin-top: 3em;
     display: flex;
     justify-content: center;
+    position: relative;
   }
 
   .slider-div-videos{
     display: flex;
-
-    max-width: 400px;
-  overflow-x: scroll;
+    width: 100%;
+    max-width: 300px;
+    overflow-x: auto;
   }
   video{
-    max-width: 400px;
+    flex: 0 0 300px;
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+  display: block;
   }
+
+  .card{
+      display: block;
+  }
+
+  .prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transform: translateY(-50%);
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+
+/*   .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  } */
+
+  .prev { left: 8px; }
+.next { right: 8px; }
+
+  .prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8)
+  }
+
+  .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 
   /* GREEN PASS */
 
@@ -307,3 +358,22 @@ const { post } = Astro.props;
     max-width: 100%;
   }
 </style>
+
+<script>
+  let scrollContainer = document.querySelector(".slider-div-videos");
+let backButton = document.querySelector(".prev");
+let nextButton = document.querySelector(".next");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  scrollContainer.scrollLeft += evt.deltaY;
+});
+
+nextButton.addEventListener("click", () => {
+  scrollContainer.scrollLeft += 300;
+});
+
+backButton.addEventListener("click", () => {
+  scrollContainer.scrollLeft -= 300;
+});
+</script>
