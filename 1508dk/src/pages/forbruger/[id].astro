@@ -98,15 +98,15 @@ const { post } = Astro.props;
   <section class="recap-section">
     <h2>Dit 2025 forbrugs-recap</h2>
     <section class="recap-cards-section">
-      <div>
-        <img class="card-1" src={post.card1} alt="" />
-        <img class="card-2" src={post.card2} alt="" />
-        <img class="card-3" src={post.card3} alt="" />
-        <img class="card-4" src={post.card4} alt="" />
-        <img class="card-5" src={post.card5} alt="" />
-        <img class="card-6" src={post.card6} alt="" />
-        <img class="card-7" src={post.card7} alt="" />
-        <img class="card-8" src={post.card8} alt="" />
+      <div class="slider-div-videos">
+        <video class="card-1" src={post.card1} autoplay muted loop alt="" />
+        <video class="card-2" src={post.card2} autoplay muted loop alt="" />
+        <video class="card-3" src={post.card3} autoplay muted loop alt="" />
+        <video class="card-4" src={post.card4} autoplay muted loop alt="" />
+        <video class="card-5" src={post.card5} autoplay muted loop alt="" />
+        <video class="card-6" src={post.card6} autoplay muted loop alt="" />
+        <video class="card-7" src={post.card7} autoplay muted loop alt="" />
+        <video class="card-8" src={post.card8} autoplay muted loop alt="" />
       </div>
     </section>
   </section>
@@ -246,6 +246,18 @@ const { post } = Astro.props;
 
   .recap-cards-section {
     margin-top: 3em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-div-videos{
+    display: flex;
+
+    max-width: 400px;
+  overflow-x: scroll;
+  }
+  video{
+    max-width: 400px;
   }
 
   /* GREEN PASS */
