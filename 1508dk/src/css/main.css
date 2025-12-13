@@ -42,7 +42,7 @@ body {
 :root {
   --primary-color: #f2f1db;
   --secondary-color: #207d62;
-  --tertiary-color: #fcfcfc;
+  --tertiary-color: #ebebeb;
   --brand-color: #ee4040;
   --white-color: #fcfcfc;
   --black-color: #272727;
@@ -64,6 +64,12 @@ body {
   --top-padding: 25px;
 
   --section-gap: 15%;
+
+  --headline-letter-spacing: 2px;
+}
+
+html {
+  background-color: var(--tertiary-color);
 }
 
 h1,
@@ -74,6 +80,14 @@ h2,
 .menu-button {
   font-family: "Anton";
   text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+.menu-button {
+  letter-spacing: var(--headline-letter-spacing);
 }
 
 a {
