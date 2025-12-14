@@ -66,6 +66,9 @@ body {
   --section-gap: 15%;
 
   --headline-letter-spacing: 2px;
+
+  --border-radius: 10px;
+  --button-border-radius: 30px;
 }
 
 html {
@@ -92,6 +95,11 @@ h4,
 
 a {
   text-decoration: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
 }
 
 h1 {
