@@ -1,5 +1,5 @@
 # Description of 1508dk
-This project was created for educational purposes only. It references real brands and certifications, but it is not affiliated with, endorsed by, or connected to any of them.
+This project was created for educational purposes only. It references real brands and certifications, but it is not affiliated with, endorsed by, or connected to any of them. All information found on the website is false.
 
 # Authors
 Signe Storgaard (https://github.com/sist0002)
