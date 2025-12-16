@@ -104,21 +104,22 @@ const { post } = Astro.props;
     <h2>Dit 2025</h2>
     <h2>forbrugs-recap</h2>
     </div>
+    
     <section class="recap-cards-section">
-      <div class="slider-div-videos">
-        <video class="card fade" src={post.card1} autoplay controls alt="" />
-        <video class="card fade" src={post.card2} autoplay controls alt="" />
-        <video class="card fade" src={post.card3} autoplay controls alt="" />
-        <video class="card fade" src={post.card4} autoplay controls alt="" />
-        <video class="card fade" src={post.card5} autoplay controls alt="" />
-        <video class="card fade" src={post.card6} autoplay controls alt="" />
-        <video class="card fade" src={post.card7} autoplay controls alt="" />
-        <video class="card fade" src={post.card8} autoplay controls alt="" />
-      </div>
- <a class="prev" >&#10094;</a>
-  <a class="next" >&#10095;</a>
+      <img src="/phoneframe.png" alt="phone frame" class="phone-wrapper">
+      <button class="prev" onclick="plusDivs(-1)">&#10094;</button>   
+      <video class="card" src={post.card1} muted playsinline alt="" />
+      <video class="card" src={post.card2} muted playsinline alt="" />
+      <video class="card" src={post.card3} muted playsinline alt="" />
+      <video class="card" src={post.card4} muted playsinline alt="" />
+      <video class="card" src={post.card5} muted playsinline alt="" />
+      <video class="card" src={post.card6} muted playsinline alt="" />
+      <video class="card" src={post.card7} muted playsinline alt="" />
+      <video class="card" src={post.card8} muted playsinline alt="" />     
+      <button class="next" onclick="plusDivs(1)">&#10095;</button>
     </section>
   </section>
+
 
   <!--   /* GREEN PASS */ -->
 
@@ -127,7 +128,7 @@ const { post } = Astro.props;
       <div class="title-qr-code-and-saldo">
         <h3>MIT</h3>
         <h1>GREEN PASS</h1>
-        <img class="qr-code" src="/public/qr_code.png" alt="en QR kode" />
+        <img class="qr-code" src="/public/qr_code.png" alt="en QR kode" width="100%"/>
         <div class="point-saldo-and-illustration">
           <h3>Pointsaldo:</h3>
           <h3 class="point-saldo">{post.greensaldo}</h3>
@@ -135,7 +136,7 @@ const { post } = Astro.props;
         <div class="green-graph">
         <img
           src={post.greengraph}
-          alt="en illustration af pointsaldo"
+          alt="en illustration af pointsaldo" width="100%" class="pointsaldo"
         />
         </div>
       </div>
@@ -144,6 +145,7 @@ const { post } = Astro.props;
           class="sewing-machine"
           src="/public/sewing-machine.png"
           alt="et billede af en symaskine"
+          width="100%"
         />
         <button class="cta-black">LÆS MERE</button>
         <button class="cta-black">DONÈR DINE POINT</button>
@@ -183,9 +185,9 @@ const { post } = Astro.props;
     margin: auto;
     padding: 2em;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    row-gap: 3em;
+    gap: 4rem;
   }
 
   .graph-section img{
@@ -268,6 +270,16 @@ const { post } = Astro.props;
   }
 
   /* FORBRUGSRECAP */
+ .phone-wrapper {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  max-width: 310px;
+ }
 
   .recap-section {
     text-align: center;
@@ -278,60 +290,39 @@ const { post } = Astro.props;
     margin-top: 3em;
     display: flex;
     justify-content: center;
-    position: relative;
-  }
-
-  .slider-div-videos{
-    display: flex;
-    width: 100%;
-    max-width: 300px;
-    overflow-x: auto;
-  }
-  video{
-    flex: 0 0 300px;
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-  display: block;
+    flex-direction: row;
+    gap: 50px;
+    height: 640px;
   }
 
   .card{
-      display: block;
+    width: 300px;
+    height: auto;
+    /* object-fit: cover; */
+    display: none;
+    margin-top: 30px;
   }
 
   .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transform: translateY(-50%);
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  max-height: 100px;
+  margin: auto 0;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  transition: 0.3s ease;
   }
 
-  .prev { left: 8px; }
-.next { right: 8px; }
 
   .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8)
+  background-color: var(--secondary-color)
   }
 
-  .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 
   /* GREEN PASS */
 
@@ -347,10 +338,16 @@ const { post } = Astro.props;
     justify-content: space-around;
     border-radius: 10px;
     padding: 3em;
+    gap: 30px;
   }
 
   .title-qr-code-and-saldo {
     text-align: center;
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
 
   .point-saldo-and-illustration {
@@ -362,11 +359,14 @@ const { post } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 1em;
+    gap: 30px;
+  }
+  .sewing-machine {
+    max-width: 400px;
   }
 
   button {
-    margin: auto;
+    margin: 0 auto;
   }
 
   h1 {
@@ -377,30 +377,82 @@ const { post } = Astro.props;
     font-family: WorkSans-Italic;
     text
   }
- .green-graph {
-    max-width: 300px;
- }
+ 
+
  .green-graph img{
   max-width: 340px;
+ }
+ @media (width<700px) {
+   .sewing-machine {
+    visibility: hidden;
+    display: none;
+  }
+  .phone-wrapper {
+  display: none;
+  visibility: hidden;
+ }
+ video{
+    min-width: 100vw;
+    height: auto;
+    display: none;
+  }
+   .recap-cards-section {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    min-height: 640px;
+  }
+  .recap-cards-section :nth-child(2) {
+  order:10;
+  position: absolute;
+  margin: auto;
+  left: 10px;
+  text-align: center;
+  z-index: 1;
+  max-width: 50px;
+  }
+  .recap-cards-section :nth-child(11) {
+  order:11;
+    position: absolute;
+  margin: auto;
+  right: 10px;
+  text-align: center;
+  z-index: 1;
+  max-width: 50px;
+  }
  }
     
 </style>
 
 <script>
-  let scrollContainer = document.querySelector(".slider-div-videos");
-let backButton = document.querySelector(".prev");
-let nextButton = document.querySelector(".next");
+document.addEventListener("DOMContentLoaded", () => {
+    let slideIndex = 1;
+    showDivs(slideIndex);
 
-scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
-});
+    window.plusDivs = function (n) {
+      showDivs(slideIndex += n);
+    };
 
-nextButton.addEventListener("click", () => {
-  scrollContainer.scrollLeft += 300;
-});
+    function showDivs(n) {
+      const slides = document.getElementsByClassName("card");
 
-backButton.addEventListener("click", () => {
-  scrollContainer.scrollLeft -= 300;
-});
+      if (!slides.length) return;
+
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].pause();
+        slides[i].currentTime = 0;
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      slides[slideIndex - 1].play();
+    }
+  });
+
 </script>
