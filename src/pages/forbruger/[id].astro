@@ -43,7 +43,9 @@ const { post } = Astro.props;
       <p class="login-text">{post.quote_p}</p>
     </div>
 
+    <div class="graph-wrapper">
     <section class="graph-section">
+      <h2 class="graph-header">Forbrugsoversigt: december 2024 vs 2025</h2>
       <article class="graph-cards">
       <div class="title-and-graph">
         <p class="p-bold">FØDEVARER</p>
@@ -67,36 +69,7 @@ const { post } = Astro.props;
         </p>
       </div>
     </section>
-  </section>
-
-  <!--   /* LOGIN MORE INFO SECTION */ -->
-
-  <section class="login-green-more-info-section">
-    <div class="dankort-hand">
-    <img src="/dankorthand.png" alt="" />
     </div>
-    <section class="green-section-info-texts">
-      <div class="text-and-arrow1">
-        <div>
-          <p class="p-bold">Forbruger du mere eller mindre end dine venner?</p>
-          <p class="under-title">Tjek, om du forbruger mere end andre.</p>
-        </div>
-        <div class="arrow-icon">
-        <img src="/iconarrow.png" alt="" />
-        </div>
-      </div>
-      <div class="text-and-arrow">
-        <div>
-          <p class="p-bold">Hold øje med dit forbrug hos Forbrugstjekkeren</p>
-          <p class="under-title">
-            Kontrollér dit faktiske og forventede forbrug.
-          </p>
-        </div>
-        <div class="arrow-icon">
-        <img src="/iconarrow.png" alt="" />
-        </div>
-      </div>
-    </section>
   </section>
 
   <!--   /* FORBRUGSRECAP */ -->
@@ -121,6 +94,7 @@ const { post } = Astro.props;
       <button class="next" onclick="plusDivs(1)">&#10095;</button>
     </section>
   </section>
+
 
 
   <!--   /* GREEN PASS */ -->
@@ -154,6 +128,37 @@ const { post } = Astro.props;
       </div>
     </section>
   </section>
+
+    <!--   /* LOGIN MORE INFO SECTION */ -->
+
+  <section class="login-green-more-info-section">
+    <div class="dankort-hand">
+    <img src="/dankorthand.png" alt="" />
+    </div>
+    <section class="green-section-info-texts">
+      <div class="text-and-arrow1">
+        <div>
+          <p class="p-bold">Forbruger du mere eller mindre end dine venner?</p>
+          <p class="under-title">Tjek, om du forbruger mere end andre.</p>
+        </div>
+        <div class="arrow-icon">
+        <img src="/iconarrow.png" alt="" />
+        </div>
+      </div>
+      <div class="text-and-arrow">
+        <div>
+          <p class="p-bold">Hold øje med dit forbrug hos Forbrugstjekkeren</p>
+          <p class="under-title">
+            Kontrollér dit faktiske og forventede forbrug.
+          </p>
+        </div>
+        <div class="arrow-icon">
+        <img src="/iconarrow.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </section>
+
 </Layout>
 
 <style>
@@ -184,13 +189,24 @@ const { post } = Astro.props;
     gap: 30px;
   }
 
+  .graph-wrapper {
+    background-color: var(--secondary-color);
+    padding: 50px;
+  }
+
   .graph-section {
     background-color: var(--tertiary-color);
     max-width: 1400px;
     margin: auto;
     padding: 2em;
-    margin-bottom: 100px;
+    border-radius: 20px;
   }
+
+.graph-header {
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+
   .graph-cards {
     display: flex;
     justify-content: space-around;
@@ -232,18 +248,18 @@ const { post } = Astro.props;
   /* LOGIN MORE INFO SECTION */
 
   .login-green-more-info-section {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: var(--white-color);
+    color: var(--black-color);
     padding: 2em;
   }
 
   .green-section-info-texts {
     margin: auto;
-    border-bottom: 2px solid var(--white-color);
-    border-top: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--black-color);
+    border-top: 2px solid var(--black-color);
     padding-bottom: 2em;
   }
   .dankort-hand {
@@ -266,7 +282,7 @@ const { post } = Astro.props;
   }
 
   .text-and-arrow1 {
-    border-bottom: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--black-color);
     padding-bottom: 2em;
   }
   .p-bold {
@@ -351,6 +367,8 @@ const { post } = Astro.props;
     border-radius: 10px;
     padding: 3em;
     gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   .title-qr-code-and-saldo {
