@@ -87,6 +87,7 @@ h2,
 .cta-green,
 .menu-button,
 .breadcrumbs {
+.login-button {
   font-family: "Anton";
   text-transform: uppercase;
 }
@@ -145,6 +146,17 @@ p {
   color: var(--black-color);
   background-color: var(--tertiary-color);
   border-radius: var(--cta-border-radius);
+  /* Transition */
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.cta-grey:hover {
+  font-size: var(--cta-font-size);
+  padding: var(--cta-padding);
+  color: var(--white-color);
+  background-color: var(--black-color);
+  border-radius: var(--cta-border-radius);
+  transform: translateY(-2px);
 }
 
 .cta-black {
@@ -154,6 +166,18 @@ p {
   color: var(--white-color);
   background-color: var(--black-color);
   border-radius: var(--cta-border-radius);
+  /* Transition */
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.cta-black:hover {
+  font-size: var(--cta-font-size);
+
+  padding: var(--cta-padding);
+  color: var(--black-color);
+  background-color: var(--tertiary-color);
+  border-radius: var(--cta-border-radius);
+  transform: translateY(-2px);
 }
 
 .menu-button {
@@ -162,15 +186,26 @@ p {
   padding: var(--cta-padding-invisible);
 }
 
-.login-button {
-  color: var(--white-color);
-  background-color: var(--secondary-color);
-  border-radius: var(--cta-border-radius);
-  padding: var(--cta-padding-invisible);
-}
-
 .menu-button:hover {
   border: 1px solid var(--black-color);
   padding: var(--cta-padding);
   border-radius: 30px;
+}
+
+.login-button {
+  font-size: var(--menu-font-size);
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  border-radius: var(--cta-border-radius);
+  padding: var(--cta-padding-invisible);
+  /* Transition */
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  color: var(--black-color);
+  background-color: var(--primary-color);
+  border-radius: var(--cta-border-radius);
+  padding: var(--cta-padding-invisible);
+  transform: translateY(-2px);
 }
