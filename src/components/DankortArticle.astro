@@ -100,25 +100,6 @@ import Breadcrumbs from "./Breadcrumbs.astro";
           som et fælles ansvar at bidrage til en mere grøn fremtid for Danmark og verden.
         </p>
       </div>
-      <div class="article-paragraph">
-        <h4>Hvad er OEKO-TEX&reg; godt for?</h4>
-        <p>
-          OEKO-TEX&reg; er et nyttigt værktøj, hvis man vil undgå skadelige kemikalier i de
-          produkter, man bruger direkte på kroppen. Det giver en ekstra grad af sikkerhed i en
-          branche, hvor kemikalier ofte er svære at gennemskue.
-        </p>
-        <p>
-          Men det er også vigtigt at vide, hvad mærket ikke siger noget om. Mange forbrugere tror,
-          OEKO-TEX&reg; er et tegn på økologi eller bæredygtighed - men det er det ikke. Det er en
-          kemisk sikkerhedstest. Ikke en vurdering af produktets miljøaftryk eller sociale
-          ansvarlighed.
-        </p>
-        <p>
-          Hvis du går efter bæredygtighed, miljøhensyn eller etisk produktion, skal du kigge efter
-          andre certificeringer sammen med OEKO-TEX&reg;, ikke i stedet for. OEKO-TEX&reg; kan være
-          en brik i puslespillet, men ikke det endelige svar.
-        </p>
-      </div>
     </article>
     <article class="article-note">
       <h4>
@@ -149,6 +130,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
 
   .article-img img {
     display: block;
+    max-height: 350px;
     border-radius: var(--border-radius);
   }
 
@@ -183,7 +165,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
     justify-self: end;
   }
 
-  .article-section > *:nth-child(6) {
+  .article-section > *:nth-child(5) {
     padding-bottom: calc(var(--main-padding) * 2);
   }
   .article-paragraph {
@@ -287,19 +269,25 @@ import Breadcrumbs from "./Breadcrumbs.astro";
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 0;
     }
 
     .article-img {
       order: -1;
-      max-width: 500px;
+      padding: calc(var(--top-padding) * 2) 0 0;
     }
 
+    h1 {
+      font-size: 50px;
+    }
     h4 {
       padding: var(--top-padding) 0 calc(var(--top-padding) / 2);
     }
+  }
 
-    .article-img {
-      padding: calc(var(--top-padding) / 2) 0;
+  @media (max-width: 500px) {
+    .article-img img {
+      max-width: 360px;
     }
   }
 </style>
