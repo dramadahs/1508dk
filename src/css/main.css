@@ -75,12 +75,18 @@ html {
   background-color: var(--tertiary-color);
 }
 
+.breadcrumbs a {
+  font-size: 16px;
+  color: var(--black-color);
+}
+
 h1,
 h2,
 .cta-grey,
 .cta-black,
 .cta-green,
-.menu-button {
+.menu-button,
+.breadcrumbs {
   font-family: "Anton";
   text-transform: uppercase;
 }
@@ -117,7 +123,7 @@ h3 {
 }
 
 h4 {
-  font-family: "WorkSans-BoldItalic";
+  font-family: "Anton";
   text-transform: uppercase;
   font-size: var(--h4-font-size);
 }
