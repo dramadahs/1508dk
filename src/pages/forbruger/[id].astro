@@ -45,17 +45,14 @@ const { post } = Astro.props;
 
     <section class="graph-section">
       <div class="title-and-graph">
-        <p class="p-bold">FORBRUGSPOST</p>
         <p class="p-bold">FØDEVARER</p>
         <img src={post.graph1} alt="" />
       </div>
       <div class="title-and-graph">
-        <p class="p-bold">FORBRUGSPOST</p>
         <p class="p-bold">TØJ, SKO & ACCESSORIES</p>
         <img src={post.graph2} alt="" />
       </div>
       <div class="title-and-graph">
-        <p class="p-bold">FORBRUGSPOST</p>
         <p class="p-bold">MEST BESØGTE BUTIKKER</p>
         <img src={post.graph3} alt="" />
       </div>
@@ -73,14 +70,18 @@ const { post } = Astro.props;
   <!--   /* LOGIN MORE INFO SECTION */ -->
 
   <section class="login-green-more-info-section">
-    <img class="dankort-hand" src="/index-hero.webp" alt="" />
+    <div class="dankort-hand">
+    <img src="/dankorthand.png" alt="" />
+    </div>
     <section class="green-section-info-texts">
       <div class="text-and-arrow1">
         <div>
           <p class="p-bold">Forbruger du mere eller mindre end dine venner?</p>
           <p class="under-title">Tjek, om du forbruger mere end andre.</p>
         </div>
-        <img class="arrow-icon" src="/iconarrow.png" alt="" />
+        <div class="arrow-icon">
+        <img src="/iconarrow.png" alt="" />
+        </div>
       </div>
       <div class="text-and-arrow">
         <div>
@@ -89,7 +90,9 @@ const { post } = Astro.props;
             Kontrollér dit faktiske og forventede forbrug.
           </p>
         </div>
-        <img class="arrow-icon" src="/iconarrow.png" alt="" />
+        <div class="arrow-icon">
+        <img src="/iconarrow.png" alt="" />
+        </div>
       </div>
     </section>
   </section>
@@ -97,17 +100,20 @@ const { post } = Astro.props;
   <!--   /* FORBRUGSRECAP */ -->
 
   <section class="recap-section">
-    <h2>Dit 2025 forbrugs-recap</h2>
+    <div class="recap-headline">
+    <h2>Dit 2025</h2>
+    <h2>forbrugs-recap</h2>
+    </div>
     <section class="recap-cards-section">
       <div class="slider-div-videos">
-        <video class="card fade" src={post.card1} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card2} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card3} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card4} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card5} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card6} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card7} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card8} autoplay muted loop alt="" />
+        <video class="card fade" src={post.card1} autoplay controls alt="" />
+        <video class="card fade" src={post.card2} autoplay controls alt="" />
+        <video class="card fade" src={post.card3} autoplay controls alt="" />
+        <video class="card fade" src={post.card4} autoplay controls alt="" />
+        <video class="card fade" src={post.card5} autoplay controls alt="" />
+        <video class="card fade" src={post.card6} autoplay controls alt="" />
+        <video class="card fade" src={post.card7} autoplay controls alt="" />
+        <video class="card fade" src={post.card8} autoplay controls alt="" />
       </div>
  <a class="prev" >&#10094;</a>
   <a class="next" >&#10095;</a>
@@ -126,11 +132,12 @@ const { post } = Astro.props;
           <h3>Pointsaldo:</h3>
           <h3 class="point-saldo">{post.greensaldo}</h3>
         </div>
+        <div class="green-graph">
         <img
-          class="green-graph"
           src={post.greengraph}
           alt="en illustration af pointsaldo"
         />
+        </div>
       </div>
       <div class="sewing-machine-and-buttons">
         <img
@@ -154,6 +161,7 @@ const { post } = Astro.props;
   .top-section {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 3em;
     justify-content: space-between;
     margin-top: 2em;
     padding: 1em 5em;
@@ -161,6 +169,8 @@ const { post } = Astro.props;
 
   .welcome {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 1em;
   }
 
   .welcome-intro {
@@ -169,11 +179,17 @@ const { post } = Astro.props;
 
   .graph-section {
     background-color: var(--tertiary-color);
-    margin: 5em;
-    padding: 1em 5em;
+    max-width: 1400px;
+    margin: auto;
+    padding: 2em;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    row-gap: 3em;
+  }
+
+  .graph-section img{
+    max-width: 300px;
   }
 
   .info-text {
@@ -195,6 +211,9 @@ const { post } = Astro.props;
     text-transform: none;
     font-size: 32px;
   }
+  .login-text{
+    max-width: 600px;
+  }
 
   /* LOGIN MORE INFO SECTION */
 
@@ -215,14 +234,19 @@ const { post } = Astro.props;
   }
   .dankort-hand {
     margin: auto;
-    width: auto;
+    max-width: 600px;
+  }
+
+  .dankort-hand img{
+    width: 100%;
   }
 
   .text-and-arrow,
   .text-and-arrow1 {
     display: flex;
-    max-width: 500px;
+    max-width: 600px;
     justify-content: space-between;
+    column-gap: 5em;
     margin-top: 2em;
     padding: 0em 2em;
   }
@@ -236,15 +260,18 @@ const { post } = Astro.props;
   }
 
   .arrow-icon {
-    width: auto;
-    height: 32px;
+    width: 48px;
+  }
+
+  .arrow-icon img {
+    width: 100%;
   }
 
   /* FORBRUGSRECAP */
 
   .recap-section {
     text-align: center;
-    margin: 5em;
+    margin: 5em 0em;
   }
 
   .recap-cards-section {
@@ -288,11 +315,6 @@ const { post } = Astro.props;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.5);
   }
-
-/*   .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  } */
 
   .prev { left: 8px; }
 .next { right: 8px; }
@@ -340,6 +362,7 @@ const { post } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 1em;
   }
 
   button {
@@ -354,9 +377,13 @@ const { post } = Astro.props;
     font-family: WorkSans-Italic;
     text
   }
-  img {
-    max-width: 100%;
-  }
+ .green-graph {
+    max-width: 300px;
+ }
+ .green-graph img{
+  max-width: 340px;
+ }
+    
 </style>
 
 <script>
