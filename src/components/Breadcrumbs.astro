@@ -1,0 +1,16 @@
+---
+const {pageUrl_2, pageName_2, pageUrl_3, pageName_3} = Astro.props;
+---
+
+<nav class="breadcrumbs">
+  <a href="/">Forbrugstjekket</a> &gt;
+  <a href={pageUrl_2}>{pageName_2}</a> &gt;
+  <a href={pageUrl_3}>{pageName_3}</a>
+</nav>
+
+<style>
+  nav {
+    padding: var(--main-padding) var(--main-padding) 0;
+    background-color: var(--primary-color);
+  }
+</style>
