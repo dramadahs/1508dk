@@ -43,7 +43,9 @@ const { post } = Astro.props;
       <p class="login-text">{post.quote_p}</p>
     </div>
 
+    <div class="graph-wrapper">
     <section class="graph-section">
+      <h2 class="graph-header">Forbrugsoversigt: december 2024 vs 2025</h2>
       <article class="graph-cards">
       <div class="title-and-graph">
         <p class="p-bold">FØDEVARER</p>
@@ -67,9 +69,83 @@ const { post } = Astro.props;
         </p>
       </div>
     </section>
+    </div>
   </section>
 
-  <!--   /* LOGIN MORE INFO SECTION */ -->
+  <!--   /* FORBRUGSRECAP */ -->
+
+  <section class="recap-section">
+    <div class="recap-headline">
+    <h2>Dit 2025</h2>
+    <h2>forbrugs-recap</h2>
+    </div>
+    
+    <section class="recap-cards-section">
+      <img src="/phoneframe.png" alt="phone frame" class="phone-wrapper">
+      <button class="prev" onclick="plusDivs(-1)">&#10094;</button>   
+      <video class="card" src={post.card1} muted playsinline alt="" />
+      <video class="card" src={post.card2} muted playsinline alt="" />
+      <video class="card" src={post.card3} muted playsinline alt="" />
+      <video class="card" src={post.card4} muted playsinline alt="" />
+      <video class="card" src={post.card5} muted playsinline alt="" />
+      <video class="card" src={post.card6} muted playsinline alt="" />
+      <video class="card" src={post.card7} muted playsinline alt="" />
+      <video class="card" src={post.card8} muted playsinline alt="" />     
+      <button class="next" onclick="plusDivs(1)">&#10095;</button>
+    </section>
+  </section>
+
+
+
+  <!--   /* GREEN PASS */ -->
+
+  <section class="green-section" id="greenpasslink">
+    <section class="grey-section">
+      <div class="title-qr-code-and-saldo">
+        <h3>MIT</h3>
+        <h1>GREEN PASS</h1>
+        <img class="qr-code" src="/public/qr_code.png" alt="en QR kode" width="100%"/>
+        <div class="point-saldo-and-illustration">
+          <h3>Pointsaldo:</h3>
+          <h3 class="point-saldo">{post.greensaldo}</h3>
+        </div>
+        <div class="green-graph">
+        <img
+          src={post.greengraph}
+          alt="en illustration af pointsaldo" width="100%" class="pointsaldo"
+        />
+        </div>
+      </div>
+      <div class="sewing-machine-and-buttons">
+        <img
+          class="sewing-machine"
+          src="/public/sewing-machine.png"
+          alt="et billede af en symaskine"
+          width="100%"
+        />
+        <button id="open-dialog" class="cta-black">LÆS MERE</button>
+
+        <dialog id="info-dialog">
+            <article class="dialog-content">
+              <button type="button" class="x-button" aria-label="Close dialog">
+                <span></span>
+                <span></span>
+              </button>
+              <h2>Hvad er et <span>Green Pass?</span></h2>
+              <p>Green Pass er din belønning for et klimasmart forbrug.</p>
+              <p>
+                Det fungerer sådan her: Hver gang du handler i en genbrugsbutik eller betaler for dine økologiske varer med Dankort, optjener du point. Når du har optjent mindst 50 point, får du et Green Pass, som du kan vise i udvalgte reparationsværksteder over hele landet for at få op til 100% rabat, når det f.eks. er tid til at reparere din cykel, dine yndlingsjeans eller dit seneste genbrugsfund.
+              </p>
+              <p>Lidt ligesom cashback, men til bæredygtige valg.</p>
+              <button id="close-dialog" class="cta-black">Luk</button>
+            </article>
+        </dialog>
+        <button class="cta-black">DONÈR DINE POINT</button>
+      </div>
+    </section>
+  </section>
+
+    <!--   /* LOGIN MORE INFO SECTION */ -->
 
   <section class="login-green-more-info-section">
     <div class="dankort-hand">
@@ -99,61 +175,6 @@ const { post } = Astro.props;
     </section>
   </section>
 
-  <!--   /* FORBRUGSRECAP */ -->
-
-  <section class="recap-section">
-    <div class="recap-headline">
-    <h2>Dit 2025</h2>
-    <h2>forbrugs-recap</h2>
-    </div>
-    
-    <section class="recap-cards-section">
-      <img src="/phoneframe.png" alt="phone frame" class="phone-wrapper">
-      <button class="prev" onclick="plusDivs(-1)">&#10094;</button>   
-      <video class="card" src={post.card1} muted playsinline alt="" />
-      <video class="card" src={post.card2} muted playsinline alt="" />
-      <video class="card" src={post.card3} muted playsinline alt="" />
-      <video class="card" src={post.card4} muted playsinline alt="" />
-      <video class="card" src={post.card5} muted playsinline alt="" />
-      <video class="card" src={post.card6} muted playsinline alt="" />
-      <video class="card" src={post.card7} muted playsinline alt="" />
-      <video class="card" src={post.card8} muted playsinline alt="" />     
-      <button class="next" onclick="plusDivs(1)">&#10095;</button>
-    </section>
-  </section>
-
-
-  <!--   /* GREEN PASS */ -->
-
-  <section class="green-section" id="greenpasslink">
-    <section class="grey-section">
-      <div class="title-qr-code-and-saldo">
-        <h3>MIT</h3>
-        <h1>GREEN PASS</h1>
-        <img class="qr-code" src="/public/qr_code.png" alt="en QR kode" width="100%"/>
-        <div class="point-saldo-and-illustration">
-          <h3>Pointsaldo:</h3>
-          <h3 class="point-saldo">{post.greensaldo}</h3>
-        </div>
-        <div class="green-graph">
-        <img
-          src={post.greengraph}
-          alt="en illustration af pointsaldo" width="100%" class="pointsaldo"
-        />
-        </div>
-      </div>
-      <div class="sewing-machine-and-buttons">
-        <img
-          class="sewing-machine"
-          src="/public/sewing-machine.png"
-          alt="et billede af en symaskine"
-          width="100%"
-        />
-        <button class="cta-black">LÆS MERE</button>
-        <button class="cta-black">DONÈR DINE POINT</button>
-      </div>
-    </section>
-  </section>
 </Layout>
 
 <style>
@@ -184,13 +205,24 @@ const { post } = Astro.props;
     gap: 30px;
   }
 
+  .graph-wrapper {
+    background-color: var(--secondary-color);
+    padding: 50px;
+  }
+
   .graph-section {
     background-color: var(--tertiary-color);
     max-width: 1400px;
     margin: auto;
     padding: 2em;
-    margin-bottom: 100px;
+    border-radius: 20px;
   }
+
+.graph-header {
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+
   .graph-cards {
     display: flex;
     justify-content: space-around;
@@ -232,18 +264,18 @@ const { post } = Astro.props;
   /* LOGIN MORE INFO SECTION */
 
   .login-green-more-info-section {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: var(--white-color);
+    color: var(--black-color);
     padding: 2em;
   }
 
   .green-section-info-texts {
     margin: auto;
-    border-bottom: 2px solid var(--white-color);
-    border-top: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--black-color);
+    border-top: 2px solid var(--black-color);
     padding-bottom: 2em;
   }
   .dankort-hand {
@@ -266,7 +298,7 @@ const { post } = Astro.props;
   }
 
   .text-and-arrow1 {
-    border-bottom: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--black-color);
     padding-bottom: 2em;
   }
   .p-bold {
@@ -351,6 +383,8 @@ const { post } = Astro.props;
     border-radius: 10px;
     padding: 3em;
     gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   .title-qr-code-and-saldo {
@@ -394,6 +428,92 @@ const { post } = Astro.props;
  .green-graph img{
   max-width: 340px;
  }
+/* DIALOG BOKS */
+ dialog {
+    overflow: hidden;
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--border-radius);
+    background-color: var(--white-color);
+    border: none;
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .dialog-content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: flex-start;
+    padding: var(--main-padding);
+    overflow-y: auto;
+    max-height: 80vh;
+    flex-direction: column;
+    max-width: 480px;
+  }
+
+  .dialog-content h2,
+  .dialog-content p {
+    color: var(--black-color);
+    padding-bottom: var(--top-padding);
+  }
+
+  .dialog-content h2 {
+    font-size: 24px;
+  }
+
+  h2 span {
+    color: var(--secondary-color);
+  }
+
+  .dialog-content p {
+    font-size: 14px;
+  }
+
+  .dialog-content button {
+    align-self: center;
+  }
+
+  .x-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .x-button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: var(--black-color);
+    transform-origin: center;
+  }
+
+  .x-button span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .x-button span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+
+ /* MEDIA QUERIES */
  @media (width<700px) {
    .sewing-machine {
     visibility: hidden;
@@ -467,4 +587,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+// DIALOG BOKS
+
+ const dialog = document.getElementById("info-dialog");
+  const openButton = document.getElementById("open-dialog");
+  const closeButton = document.getElementById("close-dialog");
+  const closeX = document.querySelector(".x-button");
+
+  openButton.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
+  closeX.addEventListener("click", () => {
+    dialog.close();
+  });
 </script>
