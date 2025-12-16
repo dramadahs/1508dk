@@ -44,6 +44,7 @@ const { post } = Astro.props;
     </div>
 
     <section class="graph-section">
+      <article class="graph-cards">
       <div class="title-and-graph">
         <p class="p-bold">FØDEVARER</p>
         <img src={post.graph1} alt="" />
@@ -56,15 +57,16 @@ const { post } = Astro.props;
         <p class="p-bold">MEST BESØGTE BUTIKKER</p>
         <img src={post.graph3} alt="" />
       </div>
+      </article>
+      <div class="info-text">
+        <p>
+          *Infografikken ovenover er med til at give et overblik over forbrug,
+          visualiseret på forskellige poster og butikker. Du kan sammenligne dit
+          forbrug med samme måned sidste år, og få et indblik i dine største
+          forbrugsposter.
+        </p>
+      </div>
     </section>
-    <div class="info-text">
-      <p>
-        Infografikken ovenover er med til at give et overblik over forbrug,
-        visualiseret på forskellige poster og butikker. Du kan sammenligne dit
-        forbrug med samme måned sidste år, og få et indblik i dine største
-        forbrugsposter.
-      </p>
-    </div>
   </section>
 
   <!--   /* LOGIN MORE INFO SECTION */ -->
@@ -177,6 +179,9 @@ const { post } = Astro.props;
 
   .welcome-intro {
     margin: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .graph-section {
@@ -184,6 +189,9 @@ const { post } = Astro.props;
     max-width: 1400px;
     margin: auto;
     padding: 2em;
+    margin-bottom: 100px;
+  }
+  .graph-cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -195,8 +203,12 @@ const { post } = Astro.props;
   }
 
   .info-text {
-    max-width: 800px;
-    margin: 5em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    p {
+      font-size: 12px;
+    }
   }
 
   .cta-black {
