@@ -82,7 +82,6 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   document.querySelector("form")?.addEventListener("submit", login);
-  //i want the input to match name and password of a user in the database i have imported. Then the site should redirect to the personal page of that user.
 
   async function login(event) {
     event.preventDefault(); //forhindrer at formularen sendes til serveren
