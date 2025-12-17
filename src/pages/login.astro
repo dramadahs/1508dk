@@ -13,8 +13,8 @@ import Layout from "../layouts/Layout.astro";
       Adgangskode
       <input type="password" name="password" placeholder="1234" id="input-password" />
     </label>
-    <button id="loginbtn"><a href="/forbruger/1/">Log ind</a></button>
-    <p>Har du ikke en bruger? <a href="">Opret dig her</a></p>
+    <input type="submit" id="loginbtn" value="Log ind" />
+    <p id="opretdig">Har du ikke en bruger? <a href="">Opret dig her</a></p>
   </form>
 </Layout>
 
@@ -28,17 +28,17 @@ import Layout from "../layouts/Layout.astro";
   }
   form {
     margin: 0 auto;
-    max-width: 300px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 15px;
-    padding: 20px;
+    padding: 50px;
     margin-top: 50px;
     gap: 30px;
-    margin-bottom: 300px;
+    margin-bottom: 200px;
   }
-  button {
+  #loginbtn {
     align-self: center;
     padding: 10px;
     background-color: black;
@@ -46,9 +46,16 @@ import Layout from "../layouts/Layout.astro";
     color: white;
     width: 100%;
     border: 1px solid black;
+    border: 0;
+    max-width: 150px;
+  }
+  #loginbtn:hover {
+    background-color: var(--tertiary-color);
+    color: var(--black-color);
+    cursor: pointer;
   }
   a {
-    color: var(--white-color);
+    /* color: var(--black-color); */
     text-decoration: underline;
   }
 
@@ -67,23 +74,35 @@ import Layout from "../layouts/Layout.astro";
     text-align: center;
     margin-top: 100px;
   }
-  p {
+  #opretdig {
     font-size: 10px;
+    text-align: center;
   }
 </style>
 
-<!-- virker ikke endnu -->
 <script>
-  // let userinputUser;
-  // let userinputPassword;
+  document.querySelector("form")?.addEventListener("submit", login);
 
-  // document.getElementById("loginbtn").onclick = function () {
-  //   userinputUser = document.getElementById("input-user").value;
-  //   userinputPassword = document.getElementById("input-password").value;
+  async function login(event) {
+    event.preventDefault(); //forhindrer at formularen sendes til serveren
 
-  //   document.getElementById("loginHeader").textContent = `Hello ${userinputUser}`;
-  //   // if (userinputUser == "carla" && userinputPassword == "1234") {
-  //   //   //   window.location.href = "forbrugstjek.astro";
-  //   // }
-  // };
+    const username = document.querySelector("#input-user").value;
+    const password = document.querySelector("#input-password").value;
+
+    const response = await fetch("https://psrgynkdjbtmjvkknaxn.supabase.co/rest/v1/eksamen02", {
+      headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBzcmd5bmtkamJ0bWp2a2tuYXhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyNjUyNTAsImV4cCI6MjA4MDg0MTI1MH0.H9E4wrsWRfXjxCAiNJyPnjx6OMBcxZOZLQe_9ypkLdk",
+      },
+    });
+
+    const users = await response.json();
+
+    const user = users.find((u) => u.username === username && u.password === password);
+
+    if (user) {
+      window.location.href = `/forbruger/${user.id}`;
+    } else {
+      alert("Forkert brugernavn eller adgangskode");
+    }
+  }
 </script>

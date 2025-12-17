@@ -43,76 +43,59 @@ const { post } = Astro.props;
       <p class="login-text">{post.quote_p}</p>
     </div>
 
+    <div class="graph-wrapper">
     <section class="graph-section">
+      <h2 class="graph-header">Forbrugsoversigt: december 2024 vs 2025</h2>
+      <article class="graph-cards">
       <div class="title-and-graph">
-        <p class="p-bold">FORBRUGSPOST</p>
         <p class="p-bold">FØDEVARER</p>
         <img src={post.graph1} alt="" />
       </div>
       <div class="title-and-graph">
-        <p class="p-bold">FORBRUGSPOST</p>
         <p class="p-bold">TØJ, SKO & ACCESSORIES</p>
         <img src={post.graph2} alt="" />
       </div>
       <div class="title-and-graph">
-        <p class="p-bold">FORBRUGSPOST</p>
         <p class="p-bold">MEST BESØGTE BUTIKKER</p>
         <img src={post.graph3} alt="" />
       </div>
+      </article>
+      <div class="info-text">
+        <p>
+          *Infografikken ovenover er med til at give et overblik over forbrug,
+          visualiseret på forskellige poster og butikker. Du kan sammenligne dit
+          forbrug med samme måned sidste år, og få et indblik i dine største
+          forbrugsposter.
+        </p>
+      </div>
     </section>
-    <div class="info-text">
-      <p>
-        Infografikken ovenover er med til at give et overblik over forbrug,
-        visualiseret på forskellige poster og butikker. Du kan sammenligne dit
-        forbrug med samme måned sidste år, og få et indblik i dine største
-        forbrugsposter.
-      </p>
     </div>
-  </section>
-
-  <!--   /* LOGIN MORE INFO SECTION */ -->
-
-  <section class="login-green-more-info-section">
-    <img class="dankort-hand" src="/index-hero.webp" alt="" />
-    <section class="green-section-info-texts">
-      <div class="text-and-arrow1">
-        <div>
-          <p class="p-bold">Forbruger du mere eller mindre end dine venner?</p>
-          <p class="under-title">Tjek, om du forbruger mere end andre.</p>
-        </div>
-        <img class="arrow-icon" src="/iconarrow.png" alt="" />
-      </div>
-      <div class="text-and-arrow">
-        <div>
-          <p class="p-bold">Hold øje med dit forbrug hos Forbrugstjekkeren</p>
-          <p class="under-title">
-            Kontrollér dit faktiske og forventede forbrug.
-          </p>
-        </div>
-        <img class="arrow-icon" src="/iconarrow.png" alt="" />
-      </div>
-    </section>
   </section>
 
   <!--   /* FORBRUGSRECAP */ -->
 
   <section class="recap-section">
-    <h2>Dit 2025 forbrugs-recap</h2>
+    <div class="recap-headline">
+    <h2>Dit 2025</h2>
+    <h2>forbrugs-recap</h2>
+    </div>
+    
     <section class="recap-cards-section">
-      <div class="slider-div-videos">
-        <video class="card fade" src={post.card1} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card2} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card3} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card4} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card5} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card6} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card7} autoplay muted loop alt="" />
-        <video class="card fade" src={post.card8} autoplay muted loop alt="" />
-      </div>
- <a class="prev" >&#10094;</a>
-  <a class="next" >&#10095;</a>
+      <img src="/phoneframe.png" alt="phone frame" class="phone-wrapper">
+      <button class="prev" onclick="plusDivs(-1)">&#10094;</button>   
+      <video class="card" src={post.card1} muted playsinline alt="" />
+      <video class="card" src={post.card2} muted playsinline alt="" />
+      <video class="card" src={post.card3} muted playsinline alt="" />
+      <video class="card" src={post.card4} muted playsinline alt="" />
+      <video class="card" src={post.card5} muted playsinline alt="" />
+      <video class="card" src={post.card6} muted playsinline alt="" />
+      <video class="card" src={post.card7} muted playsinline alt="" />
+      <video class="card" src={post.card8} muted playsinline alt="" />     
+      <button class="next" onclick="plusDivs(1)">&#10095;</button>
     </section>
   </section>
+
+
 
   <!--   /* GREEN PASS */ -->
 
@@ -121,28 +104,77 @@ const { post } = Astro.props;
       <div class="title-qr-code-and-saldo">
         <h3>MIT</h3>
         <h1>GREEN PASS</h1>
-        <img class="qr-code" src="/public/qr_code.png" alt="en QR kode" />
+        <img class="qr-code" src="/qr_code.png" alt="en QR kode" width="100%"/>
         <div class="point-saldo-and-illustration">
           <h3>Pointsaldo:</h3>
           <h3 class="point-saldo">{post.greensaldo}</h3>
         </div>
+        <div class="green-graph">
         <img
-          class="green-graph"
           src={post.greengraph}
-          alt="en illustration af pointsaldo"
+          alt="en illustration af pointsaldo" width="100%" class="pointsaldo"
         />
+        </div>
       </div>
       <div class="sewing-machine-and-buttons">
         <img
           class="sewing-machine"
-          src="/public/sewing-machine.png"
+          src="/sewing-machine.png"
           alt="et billede af en symaskine"
+          width="100%"
         />
-        <button class="cta-black">LÆS MERE</button>
+        <button id="open-dialog" class="cta-black">LÆS MERE</button>
+
+        <dialog id="info-dialog">
+            <article class="dialog-content">
+              <button type="button" class="x-button" aria-label="Close dialog">
+                <span></span>
+                <span></span>
+              </button>
+              <h2>Hvad er et <span>Green Pass?</span></h2>
+              <p>Green Pass er din belønning for et klimasmart forbrug.</p>
+              <p>
+                Det fungerer sådan her: Hver gang du handler i en genbrugsbutik eller betaler for dine økologiske varer med Dankort, optjener du point. Når du har optjent mindst 50 point, får du et Green Pass, som du kan vise i udvalgte reparationsværksteder over hele landet for at få op til 100% rabat, når det f.eks. er tid til at reparere din cykel, dine yndlingsjeans eller dit seneste genbrugsfund.
+              </p>
+              <p>Lidt ligesom cashback, men til bæredygtige valg.</p>
+              <button id="close-dialog" class="cta-black">Luk</button>
+            </article>
+        </dialog>
         <button class="cta-black">DONÈR DINE POINT</button>
       </div>
     </section>
   </section>
+
+    <!--   /* LOGIN MORE INFO SECTION */ -->
+
+  <section class="login-green-more-info-section">
+    <div class="dankort-hand">
+    <img src="/dankorthand.png" alt="" />
+    </div>
+    <section class="green-section-info-texts">
+      <div class="text-and-arrow1">
+        <div>
+          <p class="p-bold">Forbruger du mere eller mindre end dine venner?</p>
+          <p class="under-title">Tjek, om du forbruger mere end andre.</p>
+        </div>
+        <div class="arrow-icon">
+        <img src="/iconarrow.png" alt="" />
+        </div>
+      </div>
+      <div class="text-and-arrow">
+        <div>
+          <p class="p-bold">Hold øje med dit forbrug hos Forbrugstjekkeren</p>
+          <p class="under-title">
+            Kontrollér dit faktiske og forventede forbrug.
+          </p>
+        </div>
+        <div class="arrow-icon">
+        <img src="/iconarrow.png" alt="" />
+        </div>
+      </div>
+    </section>
+  </section>
+
 </Layout>
 
 <style>
@@ -154,6 +186,7 @@ const { post } = Astro.props;
   .top-section {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 3em;
     justify-content: space-between;
     margin-top: 2em;
     padding: 1em 5em;
@@ -161,24 +194,53 @@ const { post } = Astro.props;
 
   .welcome {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 1em;
   }
 
   .welcome-intro {
     margin: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .graph-wrapper {
+    background-color: var(--secondary-color);
+    padding: 50px;
   }
 
   .graph-section {
     background-color: var(--tertiary-color);
-    margin: 5em;
-    padding: 1em 5em;
+    max-width: 1400px;
+    margin: auto;
+    padding: 2em;
+    border-radius: 20px;
+  }
+
+.graph-header {
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+
+  .graph-cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .graph-section img{
+    max-width: 300px;
   }
 
   .info-text {
-    max-width: 800px;
-    margin: 5em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    p {
+      font-size: 12px;
+    }
   }
 
   .cta-black {
@@ -195,40 +257,48 @@ const { post } = Astro.props;
     text-transform: none;
     font-size: 32px;
   }
+  .login-text{
+    max-width: 600px;
+  }
 
   /* LOGIN MORE INFO SECTION */
 
   .login-green-more-info-section {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: var(--white-color);
+    color: var(--black-color);
     padding: 2em;
   }
 
   .green-section-info-texts {
     margin: auto;
-    border-bottom: 2px solid var(--white-color);
-    border-top: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--black-color);
+    border-top: 2px solid var(--black-color);
     padding-bottom: 2em;
   }
   .dankort-hand {
     margin: auto;
-    width: auto;
+    max-width: 600px;
+  }
+
+  .dankort-hand img{
+    width: 100%;
   }
 
   .text-and-arrow,
   .text-and-arrow1 {
     display: flex;
-    max-width: 500px;
+    max-width: 600px;
     justify-content: space-between;
+    column-gap: 5em;
     margin-top: 2em;
     padding: 0em 2em;
   }
 
   .text-and-arrow1 {
-    border-bottom: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--black-color);
     padding-bottom: 2em;
   }
   .p-bold {
@@ -236,80 +306,67 @@ const { post } = Astro.props;
   }
 
   .arrow-icon {
-    width: auto;
-    height: 32px;
+    width: 48px;
+  }
+
+  .arrow-icon img {
+    width: 100%;
   }
 
   /* FORBRUGSRECAP */
+ .phone-wrapper {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  max-width: 310px;
+ }
 
   .recap-section {
     text-align: center;
-    margin: 5em;
+    margin: 5em 0em;
   }
 
   .recap-cards-section {
     margin-top: 3em;
     display: flex;
     justify-content: center;
-    position: relative;
-  }
-
-  .slider-div-videos{
-    display: flex;
-    width: 100%;
-    max-width: 300px;
-    overflow-x: auto;
-  }
-  video{
-    flex: 0 0 300px;
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-  display: block;
+    flex-direction: row;
+    gap: 50px;
+    height: 640px;
   }
 
   .card{
-      display: block;
+    width: 300px;
+    height: auto;
+    /* object-fit: cover; */
+    display: none;
+    margin-top: 30px;
   }
 
   .prev, .next {
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transform: translateY(-50%);
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  max-height: 100px;
+  margin: auto 0;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  transition: 0.3s ease;
   }
 
-/*   .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  } */
-
-  .prev { left: 8px; }
-.next { right: 8px; }
 
   .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8)
+  background-color: var(--secondary-color)
   }
 
-  .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
 
   /* GREEN PASS */
 
@@ -325,10 +382,18 @@ const { post } = Astro.props;
     justify-content: space-around;
     border-radius: 10px;
     padding: 3em;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
   .title-qr-code-and-saldo {
     text-align: center;
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
 
   .point-saldo-and-illustration {
@@ -340,10 +405,14 @@ const { post } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 30px;
+  }
+  .sewing-machine {
+    max-width: 400px;
   }
 
   button {
-    margin: auto;
+    margin: 0 auto;
   }
 
   h1 {
@@ -354,26 +423,186 @@ const { post } = Astro.props;
     font-family: WorkSans-Italic;
     text
   }
-  img {
-    max-width: 100%;
+ 
+
+ .green-graph img{
+  max-width: 340px;
+ }
+/* DIALOG BOKS */
+ dialog {
+    overflow: hidden;
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--border-radius);
+    background-color: var(--white-color);
+    border: none;
+    max-width: 90vw;
+    max-height: 90vh;
   }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .dialog-content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: flex-start;
+    padding: var(--main-padding);
+    overflow-y: auto;
+    max-height: 80vh;
+    flex-direction: column;
+    max-width: 480px;
+  }
+
+  .dialog-content h2,
+  .dialog-content p {
+    color: var(--black-color);
+    padding-bottom: var(--top-padding);
+  }
+
+  .dialog-content h2 {
+    font-size: 24px;
+  }
+
+  h2 span {
+    color: var(--secondary-color);
+  }
+
+  .dialog-content p {
+    font-size: 14px;
+  }
+
+  .dialog-content button {
+    align-self: center;
+  }
+
+  .x-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .x-button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: var(--black-color);
+    transform-origin: center;
+  }
+
+  .x-button span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .x-button span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+
+ /* MEDIA QUERIES */
+ @media (width<700px) {
+   .sewing-machine {
+    visibility: hidden;
+    display: none;
+  }
+  .phone-wrapper {
+  display: none;
+  visibility: hidden;
+ }
+ video{
+    min-width: 100vw;
+    height: auto;
+    display: none;
+  }
+   .recap-cards-section {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    height: 100%;
+    min-height: 640px;
+  }
+  .recap-cards-section :nth-child(2) {
+  order:10;
+  position: absolute;
+  margin: auto;
+  left: 10px;
+  text-align: center;
+  z-index: 1;
+  max-width: 50px;
+  }
+  .recap-cards-section :nth-child(11) {
+  order:11;
+    position: absolute;
+  margin: auto;
+  right: 10px;
+  text-align: center;
+  z-index: 1;
+  max-width: 50px;
+  }
+ }
+    
 </style>
 
 <script>
-  let scrollContainer = document.querySelector(".slider-div-videos");
-let backButton = document.querySelector(".prev");
-let nextButton = document.querySelector(".next");
+document.addEventListener("DOMContentLoaded", () => {
+    let slideIndex = 1;
+    showDivs(slideIndex);
 
-scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
-});
+    window.plusDivs = function (n) {
+      showDivs(slideIndex += n);
+    };
 
-nextButton.addEventListener("click", () => {
-  scrollContainer.scrollLeft += 300;
-});
+    function showDivs(n) {
+      const slides = document.getElementsByClassName("card");
 
-backButton.addEventListener("click", () => {
-  scrollContainer.scrollLeft -= 300;
-});
+      if (!slides.length) return;
+
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].pause();
+        slides[i].currentTime = 0;
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      slides[slideIndex - 1].play();
+    }
+  });
+
+// DIALOG BOKS
+
+ const dialog = document.getElementById("info-dialog");
+  const openButton = document.getElementById("open-dialog");
+  const closeButton = document.getElementById("close-dialog");
+  const closeX = document.querySelector(".x-button");
+
+  openButton.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
+  closeX.addEventListener("click", () => {
+    dialog.close();
+  });
 </script>
