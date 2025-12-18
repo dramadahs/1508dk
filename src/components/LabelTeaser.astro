@@ -14,7 +14,7 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
       </p>
       <a class="cta-grey" href="/oekotex/">Læs artikel</a>
     </article>
-    <img src="/oekotex.png" alt="OEKO-TEX-mærkat" />
+    <img src="/oekotex.webp" alt="OEKO-TEX-mærkat" />
   </section>
 </section>
 
@@ -37,7 +37,7 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
 
   .hero-container {
     background-color: var(--primary-color);
-    background-image: url(/dandelions.png);
+    background-image: url(/dandelions.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,10 +63,10 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
   }
 
   img {
-    max-width: 100%;
+    max-width: 300px;
     height: auto;
     display: block;
-    margin-left: var(--main-padding);
+    padding-left: var(--main-padding);
   }
 
   a {
@@ -92,6 +92,8 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
 
     img {
       margin-left: 0;
+      padding-left: 0;
+      padding-top: var(--main-padding);
     }
   }
 

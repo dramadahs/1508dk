@@ -84,7 +84,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
         </ul>
       </div>
 
-      <div class="article-img"><img src="/trae.webp" alt="Et træ i et naturområde" /></div>
+      <div class="article-img"><img src="/trae_bredt.webp" alt="Et træ i et naturområde" /></div>
 
       <div class="article-paragraph">
         <h4>Ser frem mod en mere bæredygtig fremtid</h4>
@@ -212,8 +212,9 @@ import Breadcrumbs from "./Breadcrumbs.astro";
     font-family: "WorkSans";
     font-size: 18px;
     text-transform: none;
-    text-align: center;
-
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
     padding: var(--top-padding) 0;
     color: var(--white-color);
   }
@@ -238,7 +239,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
     }
 
     .headline-section {
-      padding: var(--main-padding);
+      padding: 0;
     }
 
     .article-note {
@@ -288,6 +289,12 @@ import Breadcrumbs from "./Breadcrumbs.astro";
   @media (max-width: 500px) {
     .article-img img {
       max-width: 360px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .article-note {
+      padding: var(--top-padding) calc(var(--main-padding) / 2);
     }
   }
 </style>

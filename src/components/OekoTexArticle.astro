@@ -75,7 +75,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
         </ul>
       </div>
 
-      <img src="/oekotexsquare.png" alt="oeko tex" width="100%" />
+      <img src="/oekotex.webp" alt="oeko tex" />
 
       <div class="article-paragraph">
         <h4>Problemer med transparens</h4>
@@ -231,8 +231,9 @@ import Breadcrumbs from "./Breadcrumbs.astro";
     font-family: "WorkSans";
     font-size: 18px;
     text-transform: none;
-    text-align: center;
-
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
     padding: var(--top-padding) 0;
     color: var(--white-color);
   }
@@ -257,7 +258,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
     }
 
     .headline-section {
-      padding: var(--main-padding);
+      padding: 0;
     }
 
     .article-note {
@@ -266,7 +267,6 @@ import Breadcrumbs from "./Breadcrumbs.astro";
 
       justify-content: center;
       gap: 20px;
-      padding: var(--top-padding) var(--main-padding);
     }
     .cta-black {
       display: flex;
@@ -307,6 +307,16 @@ import Breadcrumbs from "./Breadcrumbs.astro";
 
     img {
       padding: calc(var(--top-padding) / 2) 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .article-section img {
+      max-width: 350px;
+    }
+
+    .article-note {
+      padding: var(--top-padding) calc(var(--main-padding) / 2);
     }
   }
 </style>
