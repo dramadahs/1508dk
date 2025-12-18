@@ -54,6 +54,7 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
     justify-content: center;
     max-width: 1300px;
     margin: 0 auto;
+    gap: 5rem;
   }
 
   article {
@@ -66,7 +67,7 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
     max-width: 300px;
     height: auto;
     display: block;
-    padding-left: var(--main-padding);
+    margin: var(--main-padding);
   }
 
   a {
@@ -88,12 +89,6 @@ const {pageTitle, articleTitle, articleP, articleImg, background} = Astro.props;
       border-radius: 0;
       gap: calc(var(--article-gap) / 2);
       padding: var(--main-padding) calc(var(--main-padding) / 2);
-    }
-
-    img {
-      margin-left: 0;
-      padding-left: 0;
-      padding-top: var(--main-padding);
     }
   }
 
