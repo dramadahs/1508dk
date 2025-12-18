@@ -45,19 +45,19 @@ const { post } = Astro.props;
 
     <div class="graph-wrapper">
     <section class="graph-section">
-      <h2 class="graph-header">Forbrugsoversigt: december 2024 vs 2025</h2>
+      <h2 class="graph-header">Forbrugs&shy;oversigt: december 2024 vs 2025</h2>
       <article class="graph-cards">
       <div class="title-and-graph">
         <p class="p-bold">FØDEVARER</p>
-        <img src={post.graph1} alt="" />
+        <img src={post.graph1} alt="" loading="lazy"/>
       </div>
       <div class="title-and-graph">
         <p class="p-bold">TØJ, SKO & ACCESSORIES</p>
-        <img src={post.graph2} alt="" />
+        <img src={post.graph2} alt="" loading="lazy"/>
       </div>
       <div class="title-and-graph">
         <p class="p-bold">MEST BESØGTE BUTIKKER</p>
-        <img src={post.graph3} alt="" />
+        <img src={post.graph3} alt="" loading="lazy"/>
       </div>
       </article>
       <div class="info-text">
@@ -81,7 +81,7 @@ const { post } = Astro.props;
     </div>
     
     <section class="recap-cards-section">
-      <img src="/phoneframe.webp" alt="phone frame" class="phone-wrapper">
+      <img src="/phoneframe.webp" alt="phone frame" class="phone-wrapper" loading="lazy">
       <button class="prev" onclick="plusDivs(-1)">&#10094;</button>   
       <video class="card" src={post.card1} muted playsinline />
       <video class="card" src={post.card2} muted playsinline />
@@ -104,7 +104,7 @@ const { post } = Astro.props;
       <div class="title-qr-code-and-saldo">
         <h3>MIT</h3>
         <h1>GREEN PASS</h1>
-        <img class="qr-code" src="/qr_code.webp" alt="en QR kode" width="100%"/>
+        <img class="qr-code" src="/qr_code.webp" alt="en QR kode" loading="lazy"/>
         <div class="point-saldo-and-illustration">
           <h3>Pointsaldo:</h3>
           <h3 class="point-saldo">{post.greensaldo}</h3>
@@ -112,7 +112,7 @@ const { post } = Astro.props;
         <div class="green-graph">
         <img
           src={post.greengraph}
-          alt="en illustration af pointsaldo" width="100%" class="pointsaldo"
+          alt="en illustration af pointsaldo" loading="lazy" class="pointsaldo"
         />
         </div>
       </div>
@@ -121,7 +121,7 @@ const { post } = Astro.props;
           class="sewing-machine"
           src="/sewing-machine.webp"
           alt="et billede af en symaskine"
-          width="100%"
+          loading="lazy"
         />
         <button id="open-dialog" class="cta-black">LÆS MERE</button>
 
@@ -140,7 +140,7 @@ const { post } = Astro.props;
               <button id="close-dialog" class="cta-black">Luk</button>
             </article>
         </dialog>
-        <button class="cta-black">DONÈR DINE POINT</button>
+        <button class="cta-black">DONÉR DINE POINT</button>
       </div>
     </section>
   </section>
@@ -149,7 +149,7 @@ const { post } = Astro.props;
 
   <section class="login-green-more-info-section">
     <div class="dankort-hand">
-    <img src="/dankorthand.webp" alt="" />
+    <img src="/dankorthand.webp" alt="" loading="lazy" />
     </div>
     <section class="green-section-info-texts">
       <div class="text-and-arrow1">
@@ -158,7 +158,7 @@ const { post } = Astro.props;
           <p class="under-title">Tjek, om du forbruger mere end andre.</p>
         </div>
         <div class="arrow-icon">
-        <img src="/iconarrow.webp" alt="" />
+        <img src="/iconarrow.webp" alt=""loading="lazy" />
         </div>
       </div>
       <div class="text-and-arrow">
@@ -169,7 +169,7 @@ const { post } = Astro.props;
           </p>
         </div>
         <div class="arrow-icon">
-        <img src="/iconarrow.webp" alt="" />
+        <img src="/iconarrow.webp" alt="" loading="lazy" />
         </div>
       </div>
     </section>
@@ -186,11 +186,13 @@ const { post } = Astro.props;
   .top-section {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 3em;
+    row-gap: var(--main-padding);
     justify-content: space-between;
-    margin-top: 2em;
-    padding: 1em 5em;
+    margin-top: var(--top-padding);
+    padding: 0 var(--main-padding);
   }
+
+
 
   .welcome {
     display: flex;
@@ -199,10 +201,10 @@ const { post } = Astro.props;
   }
 
   .welcome-intro {
-    margin: 5em;
+    padding: var(--main-padding);
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--top-padding);
   }
 
   .graph-wrapper {
@@ -230,7 +232,7 @@ const { post } = Astro.props;
     gap: 4rem;
   }
 
-  .graph-section img{
+  .graph-section img {
     max-width: 300px;
   }
 
@@ -238,10 +240,12 @@ const { post } = Astro.props;
     max-width: 600px;
     margin: 0 auto;
     padding: 30px;
-    p {
+    
+  }
+
+  p {
       font-size: 12px;
     }
-  }
 
   .cta-black {
     align-self: flex-end;
@@ -389,12 +393,13 @@ const { post } = Astro.props;
 
   .title-qr-code-and-saldo {
     text-align: center;
-    img {
+      }
+
+     .title-qr-code-and-saldo img {
       width: 100%;
       max-width: 400px;
       margin: 0 auto;
     }
-  }
 
   .point-saldo-and-illustration {
     display: flex;
@@ -515,6 +520,21 @@ const { post } = Astro.props;
 
  /* MEDIA QUERIES */
  @media (width<700px) {
+
+  .welcome {
+     row-gap: 0;
+  }
+
+  .cta-black {
+    margin: 0 auto;}
+
+     .top-section {
+    row-gap: var(--main-padding);
+    justify-content: space-between;
+    margin-top: var(--top-padding);
+    padding: 0 var(--main-padding);
+  }
+
    .sewing-machine {
     visibility: hidden;
     display: none;
@@ -556,6 +576,15 @@ const { post } = Astro.props;
   max-width: 50px;
   }
  }
+
+ @media (max-width: 410px) {
+   .graph-section img {
+    max-width: 250px;
+  }
+    
+    }
+
+  
     
 </style>
 
