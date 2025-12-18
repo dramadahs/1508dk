@@ -3,9 +3,9 @@ const {pageUrl_2, pageName_2, pageUrl_3, pageName_3} = Astro.props;
 ---
 
 <nav class="breadcrumbs">
-  <a href="/">Forbrugstjekket</a>
-  <a href={pageUrl_2}>{pageName_2}</a>
-  <a href={pageUrl_3}>{pageName_3}</a>
+  <a href="/"><span>Forbrugstjekket</span></a>
+  <a href={pageUrl_2}><span>{pageName_2}</span></a>
+  <a href={pageUrl_3}><span>{pageName_3}</span></a>
 </nav>
 
 <style>
@@ -14,13 +14,13 @@ const {pageUrl_2, pageName_2, pageUrl_3, pageName_3} = Astro.props;
     background-color: var(--primary-color);
   }
 
+  a:hover span {
+    text-decoration: underline;
+  }
+
   .breadcrumbs a + a::before {
     content: ">";
     padding: 0 5px;
     color: var(--black-color);
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 </style>
